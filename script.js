@@ -3,8 +3,9 @@ var cols = 10;
 var size = 50;
 
 var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-if (width < 500) size = width / 10;
+if (width < 500) size = Math.floor(width / 12);
 var board = document.getElementById("game");
+console.log(size);
 
 var grid = new Array(rows);
 
