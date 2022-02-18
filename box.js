@@ -63,7 +63,7 @@ class Box {
     var e = document.getElementById(id);
     if (this.mine) {
       e.appendChild(getCircle());
-      this.gameOver(false);
+      gameOver(false);
     } else {
       if (this.totalMines > 0) e.textContent = this.totalMines;
       e.style.backgroundColor = "rgb(210 210 210)";
@@ -72,18 +72,7 @@ class Box {
     totalBoxsOpened++;
 
     if (totalBoxsOpened == rows * cols - rows) {
-      this.gameOver(true);
-    }
-  }
-
-  gameOver(isWinner) {
-    showBoard();
-    var h2 = document.getElementById("result");
-
-    if (isWinner) {
-      h2.textContent = "YOU WIN THE GAME.";
-    } else {
-      h2.textContent = "you lost the game";
+      gameOver(true);
     }
   }
 
